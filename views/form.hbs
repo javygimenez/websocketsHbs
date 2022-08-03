@@ -1,0 +1,53 @@
+{{!-- form --}}
+<section class="p-4">
+    <form id="form-add-product" class="card-body border border-5 col-lg-4 container-md mt-5 p-4 bg-light">
+    <h2 class="text-danger">Ingresar Productos</h2>
+    <div class="mb-3">
+      <label class="form-label">Nombre</label>
+      <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese nombre del producto">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Precio</label>
+      <input type="number" class="form-control" id="precio" name="precio" placeholder="Ingrese precio del producto">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Imagen</label>
+      <input type="url" class="form-control" id="imagen" name="imagen" placeholder="Ingrese una imagen del producto">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Agregar</button>
+  </form>
+</section>
+
+{{!-- tabla --}}
+<section class="p-4 bg-light">
+	<h2 class="text-primary">Listado de Productos</h2>
+	{{#if products}}
+	<table class="table table-dark table-striped container-md mt-5">
+		<thead>
+			<tr class="row-cols-2">
+				<th scope="col">Nombre</th>
+				<th scope="col">Precio</th>
+				<th scope="col">Imagen</th>
+			</tr>
+		</thead>
+		<tbody id="table-products"></tbody>
+	</table>
+	{{else}}
+	<h2 class="bg-light p-4 text-danger text-center">No hay productos en la lista</h2>
+	{{/if}}
+</section>
+
+{{!-- chat --}}
+<section class="p-4 bg-light mt-4 card-body border border-5 col-lg-7 container-md mt-5 bg-light" style="--bs-bg-opacity: .5;">
+	<h2 class="text-primary mb-4">Centro de Mensajes</h2>
+	<input id="user-email" class="form-control col-6" type="mail" id="usermail" placeholder="Ingresa tu email">
+	<hr>
+	<div id="table-chat" class="my-4 bg-light"></div>
+    <hr>
+	<form id="chat-form" class="form-inline">
+		<input id="chat-message" class="form-control mb-3" type="text" name="chatmessage"
+			placeholder="Ingresá un mensaje...">
+		<button class="btn btn-primary" type="submit">Enviar</button>
+	</form>
+</section>
